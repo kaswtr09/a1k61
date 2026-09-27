@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- Dòng trên báo cho trình duyệt biết đây là file HTML5 -->
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <!-- charset UTF-8 để hiển thị đúng tiếng Việt có dấu -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- dòng này giúp web hiển thị đúng tỉ lệ trên điện thoại -->
+  <title>A1K61 - Thanh Xuân Rực Rỡ</title>
+
+  <!-- Nối file CSS vào để trang trí trang này -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ THANH MENU (dùng chung cho cả 4 trang) ============ -->
+  <header class="navbar">
+    <img src="logo.png" alt="Logo A1K61" class="logo">
+
+    <!-- ul/li = danh sách, mỗi mục menu là 1 <li> -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thanh-vien.html">Thành viên</a></li>
+        <li><a href="ky-niem.html">Kỷ niệm</a></li>
+        <li><a href="tri-an.html">Tri ân</a></li>
+        <li><a href="lien-he.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Nút đổi Sáng/Tối. id="theme-toggle" để JS tìm ra nút này -->
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <!-- ============ KHỐI TIÊU ĐỀ LỚN (HERO SECTION) ============ -->
+  <section class="hero">
+    <h1>CMA | A1K61 TRẠM THANH XUÂN</h1>
+    <p>Lưu giữ những khoảnh khắc đẹp nhất tuổi học trò</p>
+
+    <!-- Nút bấm mới. href trỏ sang trang Kỷ niệm, vì "Khám Phá Số Kỷ Yếu"
+         hợp lý nhất là dẫn người xem tới trang album ảnh -->
+    <a href="ky-niem.html" class="hero-btn">Khám Phá Số Kỷ Yếu</a>
+  </section>
+
+<!-- ============ KHỐI 3 QUYỂN SÁCH KỶ YẾU (VOLUMES) ============ -->
+  <section class="volumes-section">
+    <!-- Quyển 1: Lớp 10 -->
+    <a href="ky-niem.html#lop10" class="volume-card">
+      <img src="volume 10.png" alt="Lớp 10">
+      <div class="vol-info">
+        <h4>Volume 1:</h4>
+        <p>Năm tháng Lớp 10</p>
+      </div>
+    </a>
+
+    <!-- Quyển 2: Lớp 11 -->
+    <a href="ky-niem.html#lop11" class="volume-card">
+      <img src="volume 11.png" alt="Lớp 11">
+      <div class="vol-info">
+        <h4>Volume 2:</h4>
+        <p>Năm tháng Lớp 11</p>
+      </div>
+    </a>
+
+    <!-- Quyển 3: Lớp 12 -->
+    <a href="ky-niem.html#lop12" class="volume-card">
+      <img src="volume 12.png" alt="Lớp 12">
+      <div class="vol-info">
+        <h4>Volume 3:</h4>
+        <p>Năm tháng Lớp 12</p>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ KHỐI CHIA SẺ KHOẢNH KHẮC (INSTAGRAM GRID) ============ -->
+  <section class="insta-gallery">
+    <h2>Chia sẻ khoảnh khắc với #A1K61ThanhXuanRucRo</h2>
+    <div class="insta-grid">
+      <!-- Dùng chung class gallery-item để có thể click phóng to ảnh -->
+      <img class="gallery-item" src="https://placehold.co/700x700?text=Anh+1" alt="Insta 1">
+      <img class="gallery-item" src="https://placehold.co/700x700?text=Anh+2" alt="Insta 2">
+      <img class="gallery-item" src="https://placehold.co/700x700?text=Anh+3" alt="Insta 3">
+      <img class="gallery-item" src="https://placehold.co/700x700?text=Anh+4" alt="Insta 4">
+      <img class="gallery-item" src="https://placehold.co/700x700?text=Anh+5" alt="Insta 5">
+    </div>
+  </section>
+
+  <!-- ============ ĐỒNG HỒ ĐẾM NGƯỢC ============ -->
+  <section class="countdown">
+    <h3>Đếm ngược đến Lễ Trưởng Thành</h3>
+    <div class="countdown-box">
+      <div class="time-unit"><span id="days">00</span><small>Ngày</small></div>
+      <div class="time-unit"><span id="hours">00</span><small>Giờ</small></div>
+      <div class="time-unit"><span id="minutes">00</span><small>Phút</small></div>
+      <div class="time-unit"><span id="seconds">00</span><small>Giây</small></div>
+    </div>
+  </section>
+
+  <!-- ============ 3 Ô SỐ LIỆU ============ -->
+  <section class="stats">
+    <div class="stat-box">
+      <h2>49</h2>
+      <p>Thành viên</p>
+    </div>
+    <div class="stat-box">
+      <h2>1000+</h2>
+      <p>Ngày bên nhau</p>
+    </div>
+    <div class="stat-box">
+      <h2>01</h2>
+      <p>Gia đình A1K61</p>
+    </div>
+  </section>
+
+<!-- ============ LIGHTBOX (Khung nền tối phóng to ảnh) ============ -->
+  <div id="lightbox" class="lightbox hidden">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Ảnh phóng to">
+  </div>
+
+  <!-- ============ CHÂN TRANG (dùng chung cho cả 4 trang) ============ -->
+  <footer>
+    <p>&copy; A1K61 - Trường THPT Chương Mỹ A</p>
+  </footer>
+
+  <!-- Nối file JS vào cuối cùng, để trang load xong nội dung trước rồi mới chạy JS -->
+  <script src="script.js"></script>
+  <!-- countdown.js chỉ trang chủ mới cần, nên không nối vào 3 trang kia -->
+  <script src="countdown.js"></script>
+  <!-- Thêm dòng này để trang chủ gọi lệnh phóng to ảnh -->
+  <script src="album.js"></script>
+</body>
+</html>

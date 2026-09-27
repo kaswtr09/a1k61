@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thành viên - A1K61</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar y hệt trang chủ, chỉ copy dán lại -->
+  <header class="navbar">
+    <img src="logo.png" alt="Logo A1K61" class="logo">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thanh-vien.html">Thành viên</a></li>
+        <li><a href="ky-niem.html">Kỷ niệm</a></li>
+        <li><a href="tri-an.html">Tri ân</a></li>
+        <li><a href="lien-he.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <section class="page-heading">
+    <h1>Sổ Lưu Bút Online</h1>
+    <p>Tìm và lọc thành viên lớp A1K61</p>
+  </section>
+
+  <!-- ============ Ô TÌM KIẾM + NÚT LỌC ============ -->
+  <section class="filter-bar">
+    <!-- id="search-input" để JS lấy giá trị người dùng gõ vào -->
+    <input type="text" id="search-input" placeholder="Tìm theo tên...">
+
+    <!-- Mỗi nút có data-to = số tổ, để JS biết bấm nút nào thì lọc tổ nào
+         data-to="all" nghĩa là hiện lại tất cả -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-to="all">Tất cả</button>
+      <button class="filter-btn" data-to="1">Tổ 1</button>
+      <button class="filter-btn" data-to="2">Tổ 2</button>
+      <button class="filter-btn" data-to="3">Tổ 3</button>
+      <button class="filter-btn" data-to="4">Tổ 4</button>
+    </div>
+  </section>
+
+  <!-- ============ LƯỚI THẺ THÀNH VIÊN ============
+       Mỗi thẻ có data-to (số tổ) và data-name (để JS đọc và so sánh khi lọc/tìm)
+       THAY THÔNG TIN MẪU BÊN DƯỚI BẰNG THÔNG TIN THẬT CỦA LỚP -->
+  <section class="member-grid" id="member-grid">
+
+    <!-- Ví dụ mẫu: thẻ này có thêm data-photos để bạn thấy cách khai báo nhiều ảnh phụ.
+         Khi thêm ảnh thật, chỉ cần đổi các đường dẫn trong data-photos, cách nhau bởi dấu phẩy -->
+    <div class="member-card" data-id="to1-01-01" data-to="1" data-name="nguyễn thị tâm anh"
+         data-fullname="Nguyễn Thị Tâm Anh" data-nickname="Tâm Anh" data-role="Tổ trưởng"
+         data-quote="Học hết mình!" data-fb="https://www.facebook.com/tam.anh.550909"
+         data-photos="https://placehold.co/150?text=A-1,https://placehold.co/150?text=A-2,https://placehold.co/150?text=A-3">
+      <img src="Tổ 1/Tâm Anh.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Tâm Anh</h3>
+      <p class="nickname">Tâm Anh</p>
+      <p class="quote">"Học hết mình!"</p>
+    </div>
+
+    <div class="member-card" data-id="to1-02-02" data-to="1" data-name="phạm nguyễn duy anh"
+         data-fullname="Phạm Nguyễn Duy Anh" data-nickname="Duy Anh" data-role="Thành viên"
+         data-quote="Cố gắng không bao giờ là thừa." data-fb="https://www.facebook.com/profile.php?id=61594653893657"
+         data-photos="https://placehold.co/150?text=A-1,https://placehold.co/150?text=A-2,https://placehold.co/150?text=A-3">
+
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Phạm Nguyễn Duy Anh</h3>
+      <p class="nickname">Duy Anh</p>
+      <p class="quote">"Cố gắng không bao giờ là thừa."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-03-03" data-to="1" data-name="trịnh châu anh"
+         data-fullname="Trịnh Châu Anh" data-nickname="Châu Anh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/chauu.anhh.912033#"
+         data-photos="Tổ 1/Châu Anh1.png,https://placehold.co/150?text=A-2,https://placehold.co/150?text=A-3">
+      <img src="Tổ 1/Châu Anh.jpg" alt="Ảnh thành viên">
+      <h3>Trịnh Châu Anh</h3>
+      <p class="nickname">Châu Anh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-04-04" data-to="1" data-name="thân công bảo"
+         data-fullname="Thân Công Bảo" data-nickname="Bảo" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/tb171309#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Thân Công Bảo</h3>
+      <p class="nickname">Bảo</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-05-05" data-to="1" data-name="đặng anh châu"
+         data-fullname="Đặng Anh Châu" data-nickname="Châu" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/anh.chau.628583">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Đặng Anh Châu</h3>
+      <p class="nickname">Châu</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-06-06" data-to="1" data-name="nguyễn thị huyền dương"
+         data-fullname="Nguyễn Thị Huyền Dương" data-nickname="Dương" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/huyen.duong.29584#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Huyền Dương</h3>
+      <p class="nickname">Dương</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-07-07" data-to="1" data-name="đặng tiến đạt"
+         data-fullname="Đặng Tiến Đạt" data-nickname="Tiến Đạt" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/tien.dat.707734#"
+         data-photos="Tổ 1/Tiến Đạt1.png,Tổ 1/Tiến Đạt2.jpg,https://placehold.co/150?text=A-3">
+      <img src="Tổ 1/Tiến Đạt.png" alt="Ảnh thành viên">
+      <h3>Đặng Tiến Đạt</h3>
+      <p class="nickname">Tiến Đạt</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-08-08" data-to="1" data-name="nguyễn vũ quốc đạt"
+         data-fullname="Nguyễn Vũ Quốc Đạt" data-nickname="Quốc Đạt" data-role="Lớp phó lao động"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/quordt#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Vũ Quốc Đạt</h3>
+      <p class="nickname">Quốc Đạt</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-09-09" data-to="1" data-name="tạ thúy điệp"
+         data-fullname="Tạ Thúy Điệp" data-nickname="Thúy Điệp" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/thuydiepp12684#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Tạ Thúy Điệp</h3>
+      <p class="nickname">Thúy Điệp</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-10-10" data-to="1" data-name="nguyễn quang đoàn"
+         data-fullname="Nguyễn Quang Đoàn" data-nickname="Đoàn" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/qdoan09#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Quang Đoàn</h3>
+      <p class="nickname">Đoàn</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-11-11" data-to="1" data-name="phạm thị ngân hà"
+         data-fullname="Phạm Thị Ngân Hà" data-nickname="Hà" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/phmthi.nganha#">
+      <img src="Tổ 1/.jpg" alt="Ảnh thành viên">
+      <h3>Phạm Thị Ngân Hà</h3>
+      <p class="nickname">Hà</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to1-12-12" data-to="1" data-name="hoàng gia minh hiệp"
+         data-fullname="Hoàng Gia Minh Hiệp" data-nickname="Hiệp" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/the.scemmer#">
+      <img src="Tổ 1/Hiệp.jpg" alt="Ảnh thành viên">
+      <h3>Hoàng Gia Minh Hiệp</h3>
+      <p class="nickname">Hiệp</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-01-13" data-to="2" data-name="trịnh huy hoàng"
+         data-fullname="Trịnh Huy Hoàng" data-nickname="Hoàng" data-role="Thành viên"
+         data-quote="Mỗi ngày là một trải nghiệm mới." data-fb="https://www.facebook.com/trinh.huy.hoang.346983">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Trịnh Huy Hoàng</h3>
+      <p class="nickname">Hoàng</p>
+      <p class="quote">"Mỗi ngày là một trải nghiệm mới."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-02-14" data-to="2" data-name="đỗ ngọc huy"
+         data-fullname="Đỗ Ngọc Huy" data-nickname="Huy" data-role="Thành viên"
+         data-quote="Vừa học vừa chơi." data-fb="https://www.facebook.com/profile.php?id=61561168737987#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Đỗ Ngọc Huy</h3>
+      <p class="nickname">Huy</p>
+      <p class="quote">"Vừa học vừa chơi."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-03-15" data-to="2" data-name="lê thúy hưng"
+         data-fullname="Lê Thúy Hưng" data-nickname="Hưng" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/thuy.hung.le.243286#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Lê Thúy Hưng</h3>
+      <p class="nickname">Hưng</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-04-16" data-to="2" data-name="nguyễn duy khang"
+         data-fullname="Nguyễn Duy Khang" data-nickname="Khang" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/duy.khang.387642#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Duy Khang</h3>
+      <p class="nickname">Khang</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-05-17" data-to="2" data-name="nguyễn đức khanh"
+         data-fullname="Nguyễn Đức Khanh" data-nickname="Lốp trưởng" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/uckhanh.758570#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Đức Khanh</h3>
+      <p class="nickname">Lốp trưởng</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-06-18" data-to="2" data-name="nguyễn ngọc tuấn khanh"
+         data-fullname="Nguyễn Ngọc Tuấn Khanh" data-nickname="Tuấn Khanh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/khanh.nguyen.662855#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Ngọc Tuấn Khanh</h3>
+      <p class="nickname">Tuấn Khanh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-07-19" data-to="2" data-name="lê khánh lâm"
+         data-fullname="Lê Khánh Lâm" data-nickname="Lâm" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/khanh.lam.405121#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Lê Khánh Lâm</h3>
+      <p class="nickname">Lâm</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-08-20" data-to="2" data-name="đoàn tú linh"
+         data-fullname="Đoàn Tú Linh" data-nickname="Tú Linh" data-role="Phó bí thư"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/linh.ling.253043#"
+         data-photos="Tổ 2/TLinh1.jpg,Tổ 2/TLinh2.jpg,Tổ 2/TLinh3.jpg">
+      <img src="Tổ 2/TLinh.jpg" alt="Ảnh thành viên">
+      <h3>Đoàn Tú Linh</h3>
+      <p class="nickname">Tú Linh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-09-21" data-to="2" data-name="nguyễn khánh linh"
+         data-fullname="Nguyễn Khánh Linh" data-nickname="NKLinh" data-role="Tổ trưởng"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/ultgvatdn#"
+         data-photos="Tổ 2/NKLinh1.jpg,Tổ 2/NKLinh2.jpg,Tổ 2/NKLinh3.png">
+      <img src="Tổ 2/NKLinh.png" alt="Ảnh thành viên">
+      <h3>Nguyễn Khánh Linh</h3>
+      <p class="nickname">NKLinh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-10-22" data-to="2" data-name="nguyễn thị khánh linh"
+         data-fullname="Nguyễn Thị Khánh Linh" data-nickname="NTKLinh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/khanhlinh41109#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Khánh Linh</h3>
+      <p class="nickname">NTKLinh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-11-23" data-to="2" data-name="đào thanh mai"
+         data-fullname="Đào Thanh Mai" data-nickname="Mai" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/thanh.mai.674982#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Đào Thanh Mai</h3>
+      <p class="nickname">Mai</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to2-12-24" data-to="2" data-name="nguyễn huy minh"
+         data-fullname="Nguyễn Huy Minh" data-nickname="Huy Minh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/minh.nguyenhuy.142#">
+      <img src="Tổ 2/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Huy Minh</h3>
+      <p class="nickname">Huy Minh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-01-25" data-to="3" data-name="vũ tuấn minh"
+         data-fullname="Vũ Tuấn Minh" data-nickname="Tuấn Minh" data-role="Tổ trưởng"
+         data-quote="Không gì là không thể." data-fb="https://www.facebook.com/minh.vu.W11k3110#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Vũ Tuấn Minh</h3>
+      <p class="nickname">Tuấn Minh</p>
+      <p class="quote">"Không gì là không thể."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-02-26" data-to="3" data-name="đỗ yến nhi"
+         data-fullname="Đỗ Yến Nhi" data-nickname="Đỗ Nhi" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/oyennhi.904894#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Đỗ Yến Nhi</h3>
+      <p class="nickname">Đỗ Nhi</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-03-27" data-to="3" data-name="hồ yến nhi"
+         data-fullname="Hồ Yến Nhi" data-nickname="Hồ Nhi" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/ho.nhi.335414#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Hồ Yến Nhi</h3>
+      <p class="nickname">Hồ Nhi</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-04-28" data-to="3" data-name="nguyễn thị bảo nhi"
+         data-fullname="Nguyễn Thị Bảo Nhi" data-nickname="Bảo Nhi" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/bn.baonhii#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Bảo Nhi</h3>
+      <p class="nickname">Bảo Nhi</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-05-29" data-to="3" data-name="bùi viết phúc"
+         data-fullname="Bùi Viết Phúc" data-nickname="Phúc" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/bui.viet.phuc.2024#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Bùi Viết Phúc</h3>
+      <p class="nickname">Phúc</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-06-30" data-to="3" data-name="nguyễn thị khánh phương"
+         data-fullname="Nguyễn Thị Khánh Phương" data-nickname="Phương" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/khanh.phuong.766696#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Khánh Phương</h3>
+      <p class="nickname">Phương</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-07-31" data-to="3" data-name="nguyễn hữu quang"
+         data-fullname="Nguyễn Hữu Quang" data-nickname="Quang" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/nguyen.huu.quang.56695#">
+      <img src="Tổ 3/Quang.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Hữu Quang</h3>
+      <p class="nickname">Quang</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-08-32" data-to="3" data-name="lê ngọc tú quỳnh"
+         data-fullname="Lê Ngọc Tú Quỳnh" data-nickname="Lê Quỳnh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/ngoctuquynh.le.14#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Lê Ngọc Tú Quỳnh</h3>
+      <p class="nickname">Lê Quỳnh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-09-47" data-to="3" data-name="bùi huyền trang"
+         data-fullname="Bùi Huyền Trang" data-nickname="Trang" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/bui.huyen.trang.520846#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Bùi Huyền Trang</h3>
+      <p class="nickname">Trang</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-10-34" data-to="3" data-name="nguyễn danh hồng sơn"
+         data-fullname="Nguyễn Danh Hồng Sơn" data-nickname="Sơn" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/hongson.nguyendanh.1#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Danh Hồng Sơn</h3>
+      <p class="nickname">Sơn</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-11-35" data-to="3" data-name="nguyễn ngọc tâm"
+         data-fullname="Nguyễn Ngọc Tâm" data-nickname="Tâm" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/tam.ngoc.727424#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Ngọc Tâm</h3>
+      <p class="nickname">Tâm</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to3-12-36" data-to="3" data-name="lê trọng tấn"
+         data-fullname="Lê Trọng Tấn" data-nickname="Tấn" data-role="Lớp trưởng"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/le.trong.tan.124380#">
+      <img src="Tổ 3/.jpg" alt="Ảnh thành viên">
+      <h3>Lê Trọng Tấn</h3>
+      <p class="nickname">Tấn</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-01-37" data-to="4" data-name="phùng thị thanh thảo"
+         data-fullname="Phùng Thị Thanh Thảo" data-nickname="Thanh Thảo" data-role="Thành viên"
+         data-quote="Cười nhiều hơn, lo ít lại." data-fb="https://www.facebook.com/phungdislys#"
+         data-photos="Tổ 4/Thanh Thảo1.jpg,Tổ 4/Thanh Thảo2.jpg,https://placehold.co/150?text=A-3">
+      <img src="Tổ 4/Thanh Thảo.jpg" alt="Ảnh thành viên">
+      <h3>Phùng Thị Thanh Thảo</h3>
+      <p class="nickname">Thanh Thảo</p>
+      <p class="quote">"Cười nhiều hơn, lo ít lại."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-02-38" data-to="4" data-name="trần thị phương thảo"
+         data-fullname="Trần Thị Phương Thảo" data-nickname="Phương Thảo" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/tran.thi.phuong.thao.955261#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Trần Thị Phương Thảo</h3>
+      <p class="nickname">Phương Thảo</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-03-39" data-to="4" data-name="tràn mạnh thắng"
+         data-fullname="Trần Mạnh Thắng" data-nickname="Thắng" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/manh.thang.52582#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Trần Mạnh Thắng</h3>
+      <p class="nickname">Thắng</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-04-40" data-to="4" data-name="đinh công thích"
+         data-fullname="Đinh Công Thích" data-nickname="Like" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="#">
+      <img src="Tổ 4/Thích.jpg" alt="Ảnh thành viên">
+      <h3>Đinh Công Thích</h3>
+      <p class="nickname">Like</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-05-41" data-to="4" data-name="nguyễn phương thu"
+         data-fullname="Nguyễn Phương Thu" data-nickname="Thư" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/phuong.thu.761778#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Phương Thu</h3>
+      <p class="nickname">Thu</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-06-42" data-to="4" data-name="đỗ thị phương thùy"
+         data-fullname="Đỗ Thị Phương Thùy" data-nickname="Thùy" data-role="Bí thư"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/phuongthuydoo39.8#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Đỗ Thị Phương Thùy</h3>
+      <p class="nickname">Thùy</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-07-43" data-to="4" data-name="nguyễn thị thủy"
+         data-fullname="Nguyễn Thị Thủy" data-nickname="Thủy" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/nguyn.thi.thuy.872070#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Thị Thủy</h3>
+      <p class="nickname">Thủy</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-08-44" data-to="4" data-name="nguyễn vũ minh thư"
+         data-fullname="Nguyễn Vũ Minh Thư" data-nickname="Thư" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/ng.thu.772592#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Vũ Minh Thư</h3>
+      <p class="nickname">Thư</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-09-45" data-to="4" data-name="lê thị hồng thương"
+         data-fullname="Lê Thị Hồng Thương" data-nickname="Thương" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/thuong.le.265319#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Lê Thị Hồng Thương</h3>
+      <p class="nickname">Thương</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-10-46" data-to="4" data-name="nguyễn duy tiến"
+         data-fullname="Nguyễn Duy Tiến" data-nickname="Tiến" data-role="Tổ trưởng"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/duy.tien.766276#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Nguyễn Duy Tiến</h3>
+      <p class="nickname">Tiến</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-11-33" data-to="4" data-name="vũ tú quỳnh"
+         data-fullname="Vũ Tú Quỳnh" data-nickname="Vũ Quỳnh" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/vu.quynhh.130678#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Vũ Tú Quỳnh</h3>
+      <p class="nickname">Vũ Quỳnh</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-12-48" data-to="4" data-name="tống thị ngọc uyên"
+         data-fullname="Tống Thị Ngọc Uyên" data-nickname="Uyên" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/ngocuyen.nu23#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Tống Thị Ngọc Uyên</h3>
+      <p class="nickname">Uyên</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+    <div class="member-card" data-id="to4-13-49" data-to="4" data-name="đinh thành vũ"
+         data-fullname="Đinh Thành Vũ" data-nickname="Vũ" data-role="Thành viên"
+         data-quote="Đang cập nhật..." data-fb="https://www.facebook.com/thanh.vu.402895#">
+      <img src="Tổ 4/.jpg" alt="Ảnh thành viên">
+      <h3>Đinh Thành Vũ</h3>
+      <p class="nickname">Vũ</p>
+      <p class="quote">"Đang cập nhật..."</p>
+    </div>
+
+  </section>
+
+  <!-- Dòng chữ hiện ra khi tìm/lọc mà không có ai khớp -->
+  <p id="no-result" class="no-result" style="display:none;">Không tìm thấy thành viên nào.</p>
+
+  <!-- ============ ẢNH NHÓM BẠN THÂN ============
+       Vì lớp chơi theo nhiều nhóm nhỏ, đây là nơi để ảnh của từng nhóm.
+       Dùng lại đúng class "gallery-item" như bên trang Kỷ niệm, nên bấm vào
+       ảnh cũng phóng to được luôn (nhờ nạp lại album.js bên dưới) -->
+  <section class="album-block">
+    <h2>Ảnh Nhóm</h2>
+    <div class="gallery">
+      <img class="gallery-item" src="https://placehold.co/400x300?text=Nhom+1" alt="Ảnh nhóm 1">
+      <img class="gallery-item" src="https://placehold.co/400x300?text=Nhom+2" alt="Ảnh nhóm 2">
+      <img class="gallery-item" src="https://placehold.co/400x300?text=Nhom+3" alt="Ảnh nhóm 3">
+      <img class="gallery-item" src="https://placehold.co/400x300?text=Nhom+4" alt="Ảnh nhóm 4">
+    </div>
+  </section>
+
+  <!-- Khung phóng to ảnh, dùng chung cơ chế với trang Kỷ niệm -->
+  <div id="lightbox" class="lightbox hidden">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Ảnh phóng to">
+  </div>
+
+  <!-- ============ MODAL (khung chi tiết hiện lên khi bấm vào thẻ) ============
+       Mặc định ẩn đi (class "hidden" ở style.css), JS sẽ hiện ra khi cần -->
+  <div id="member-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <img id="modal-img" src="" alt="Ảnh thành viên">
+      <h2 id="modal-fullname"></h2>
+      <p id="modal-role" class="modal-role"></p>
+      <p id="modal-quote" class="modal-quote"></p>
+
+      <!-- Link Facebook, lấy từ data-fb của thẻ được bấm -->
+      <a id="modal-fb" class="modal-fb" href="#" target="_blank">
+        <i class="fa-brands fa-facebook"></i> Facebook
+      </a>
+
+      <!-- Nơi hiện thêm các ảnh khác của bạn này (nếu có khai báo ở data-photos) -->
+      <div id="modal-gallery" class="modal-gallery"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; A1K61 - Trường THPT Chương Mỹ A</p>
+  </footer>
+
+  <!-- Khung Modal dùng để xem ảnh phóng to -->
+  <div id="imageModal" class="image-modal hidden">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="imgExpanded" src="" alt="Ảnh phóng to">
+  </div>
+
+  <script src="script.js"></script>
+  <!-- album.js xử lý phần lightbox cho khối "Ảnh Nhóm" phía trên -->
+  <script src="album.js"></script>
+  <script src="members.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - A1K61</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome: thư viện icon có sẵn logo Facebook, TikTok...
+       chỉ cần nối link này vào là dùng được, không cần tự vẽ icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="logo.png" alt="Logo A1K61" class="logo">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thanh-vien.html">Thành viên</a></li>
+        <li><a href="ky-niem.html">Kỷ niệm</a></li>
+        <li><a href="tri-an.html">Tri ân</a></li>
+        <li><a href="lien-he.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <section class="page-heading">
+    <h1>Liên Hệ Với A1K61</h1>
+    <p>Theo dõi và kết nối với tập thể lớp qua các kênh dưới đây</p>
+  </section>
+
+  <!-- Mỗi ô liên hệ là 1 thẻ nhỏ, giống kiểu member-card cho đồng bộ giao diện -->
+  <section class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">👤</div> <!-- Đổi icon thành 1 người cho đúng vai trò nhóm trưởng -->
+      <h3>Nhóm trưởng</h3>
+      <!-- Nhớ thay chữ LINK_FACEBOOK_CUA_BAN bằng đường link thật của bạn nhé -->
+      <p><a href="https://www.facebook.com/ultgvatdn#" target="_blank">Liên hệ Facebook</a></p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <h3>Email lớp</h3>
+      <p><a href="#" onclick="navigator.clipboard.writeText('a1k61thptcma@gmail.com'); alert('Đã copy email!'); return false;">Copy Email</a></p>
+    </div>
+
+    <!-- <i class="fa-brands fa-facebook"></i>: gọi icon Facebook có sẵn từ Font Awesome -->
+    <div class="contact-card">
+      <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
+      <h3>Facebook</h3>
+      <!-- Sửa href thành link Facebook thật của lớp. Chữ hiển thị chỉ là "Link",
+           nhưng bấm vào sẽ chuyển đúng tới địa chỉ trong href -->
+      <p><a href="https://facebook.com/61564073555359" target="_blank">Link</a></p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon"><i class="fa-brands fa-tiktok"></i></div>
+      <h3>TikTok</h3>
+      <p><a href="https://tiktok.com/@a1.k61.cma?_r=1&_t=ZS-9A4PICTtEPZ" target="_blank">Link</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; A1K61 - Trường THPT Chương Mỹ A</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kỷ niệm - A1K61</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="logo.png" alt="Logo A1K61" class="logo">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thanh-vien.html">Thành viên</a></li>
+        <li><a href="ky-niem.html">Kỷ niệm</a></li>
+        <li><a href="tri-an.html">Tri ân</a></li>
+        <li><a href="lien-he.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <section class="page-heading">
+    <h1>Góc Thời Gian</h1>
+    <p>Những khoảnh khắc đáng nhớ của A1K61 qua 3 năm học</p>
+  </section>
+
+  <!-- Khối Lớp 10 thêm id="lop10" -->
+  <section id="lop10" class="album-block">
+    <h2>Lớp 10</h2>
+    <div class="gallery">
+      <img class="gallery-item" src="Lớp 10/20 10.jpg" alt="20 tháng 10">
+      <img class="gallery-item" src="Lớp 10/20 10 1.jpg" alt="20 tháng 10">
+      <img class="gallery-item" src="Lớp 10/Dã ngoại.jpg" alt="Dã ngoại">
+      <img class="gallery-item" src="Lớp 10/Dã ngoại1.jpg" alt="Dã ngoại">
+    </div>
+  </section>
+
+  <!-- Khối Lớp 11 thêm id="lop11" -->
+  <section id="lop11" class="album-block">
+    <h2>Lớp 11</h2>
+    <div class="gallery">
+      <img class="gallery-item" src="Lớp 11/Quân sự.jpg" alt="Quân sự">
+      <img class="gallery-item" src="Lớp 11/Quân sự1.jpg" alt="Quân sự">
+      <img class="gallery-item" src="Lớp 11/Sinh nhật GVCN.jpg" alt="Sinh nhật GVCN">
+
+      <video class="gallery-item" controls preload="metadata">
+        <source src="Lớp 11/Quân sự.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ phát video.
+      </video>
+    </div>
+  </section>
+
+  <!-- Khối Lớp 12 thêm id="lop12" -->
+  <section id="lop12" class="album-block">
+    <h2>Lớp 12</h2>
+    <div class="gallery">
+      <img class="gallery-item" src="Lớp 12/Khai giảng.jpg" alt="Khai giảng">
+      <img class="gallery-item" src="Lớp 12/Khai giảng1.jpg" alt="Khai giảng">
+
+      <video class="gallery-item" controls preload="metadata">
+        <source src="Lớp 12/Khai giảng.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ phát video.
+      </video>
+    </div>
+  </section>
+
+  <!-- ============ LIGHTBOX (khung phóng to ảnh) ============ -->
+  <div id="lightbox" class="lightbox hidden">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Ảnh phóng to">
+  </div>
+
+  <footer>
+    <p>&copy; A1K61 - Trường THPT Chương Mỹ A</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="album.js"></script>
+</body>
+</html>

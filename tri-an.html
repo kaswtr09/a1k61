@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tri ân - A1K61</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="logo.png" alt="Logo A1K61" class="logo">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="thanh-vien.html">Thành viên</a></li>
+        <li><a href="ky-niem.html">Kỷ niệm</a></li>
+        <li><a href="tri-an.html">Tri ân</a></li>
+        <li><a href="lien-he.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <section class="page-heading">
+    <h1>Lưu Bút Tri Ân</h1>
+    <p>Gửi lời cảm ơn đến thầy cô và những người bạn A1K61</p>
+  </section>
+
+  <!-- ============ GÓC TRI ÂN THẦY CÔ ============ -->
+  <section class="teacher-section">
+    <img src="GVCN.jpg" alt="Cô chủ nhiệm">
+    <div class="teacher-text">
+      <h2>Gửi Cô Chủ Nhiệm</h2>
+      <p>Cảm ơn cô đã đồng hành cùng chúng em suốt 3 năm học, dìu dắt chúng em trưởng thành từng ngày. Tập thể A1K61 luôn biết ơn và trân trọng những gì cô đã dành cho chúng em.</p>
+    </div>
+  </section>
+
+  <!-- ============ WISHBOARD (bảng lời chúc) ============ -->
+  <section class="wishboard-section">
+    <h2>Gửi Lời Chúc</h2>
+
+    <!-- Form nhập tên + lời chúc. id="wish-form" để JS bắt sự kiện submit -->
+    <form id="wish-form" class="wish-form">
+      <input type="text" id="wish-name" placeholder="Tên của bạn" required>
+      <textarea id="wish-message" placeholder="Lời chúc của bạn..." required></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+
+    <!-- Nơi các tấm thiệp lời chúc sẽ được JS thêm vào -->
+    <div id="wish-list" class="wish-list"></div>
+  </section>
+
+  <footer>
+    <p>&copy; A1K61 - Trường THPT Chương Mỹ A</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="tribute.js"></script>
+</body>
+</html>
